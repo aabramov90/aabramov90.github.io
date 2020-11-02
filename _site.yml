@@ -6,7 +6,7 @@ navbar:
     - text: "About"
       href: about.html
     - text: "Plotly"
-      href: about.html
+      href: plotly.html
     - text: "Dashboard"
       href: dashboard_template.html
     - icon: fa-envelope fa-lg
@@ -15,4 +15,4 @@ navbar:
       href: http://github.com/aabramov90/
 output:
   html_document:
-    theme: cerulean
+    theme: journal

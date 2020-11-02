@@ -1,5 +1,5 @@
 ---
-title: "Plotly"
+title: "Airbnb Data from 2017"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns

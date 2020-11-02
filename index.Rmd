@@ -16,4 +16,4 @@ output:
 
 # Local site
 
-[About Me](about.html)
+[Airbnb Dashboard](dashboard_template.html)
