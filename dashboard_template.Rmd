@@ -18,7 +18,7 @@ library(leaflet)
 
 data("nyc_airbnb")
 
-nycairbnb = 
+nyc_airbnb = 
   nyc_airbnb %>% 
     mutate(
       rating = review_scores_location / 2) %>% 
@@ -36,15 +36,10 @@ Column {data-width=650}
 ### Scatterplot
 
 ```{r}
-renderLeaflet({
 nyc_airbnb %>% 
   mutate(
     text_label = str_c("Price: $", price, "\nRating: ", rating)) %>% 
-  plot_ly(x = ~lat, y = ~long, color = ~price, text = ~text_label, alpha = 0.5, type = "scatter", mode = "markers") %>% 
-  leaflet() %>% 
-  addProviderTiles(providers$CartoDB.Positron) %>% 
-  addCircleMarkers(~lat, ~long, radius = .1)
-})
+  plot_ly(x = ~lat, y = ~long, color = ~price, text = ~text_label, alpha = 0.5, type = "scatter", mode = "markers") 
 ```
 
 Column {data-width=350}
