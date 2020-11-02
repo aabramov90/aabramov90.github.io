@@ -6,10 +6,6 @@ output:
     toc_float: true
 ---
 
-# This is Jeff's awesome website
-
-![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
-
 # Links
 
 * [Google] (https://www.google.com/)
