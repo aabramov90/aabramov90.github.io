@@ -5,14 +5,14 @@ navbar:
   right:
     - text: "About"
       href: about.html
-    - test: "Plotly"
-      href: plotly.html
-    - test: "Dashboard"
-      href: dashboard.html
+    - text: "Plotly"
+      href: about.html
+    - text: "Dashboard"
+      href: dashboard_template.html
     - icon: fa-envelope fa-lg
       href: mailto:<aabramov90@gmail.com>
     - icon: fa-github fa-lg
       href: http://github.com/aabramov90/
 output:
   html_document:
-    theme: journal
+    theme: cerulean
