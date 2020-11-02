@@ -4,7 +4,7 @@ output:
   flexdashboard::flex_dashboard:
     theme: journal
     social: menu
-    orientation: rows
+    orientation: columns
     vertical_layout: fill
     source: embed
 ---
@@ -18,10 +18,12 @@ library(leaflet)
 
 data("nyc_airbnb")
 
-nyc_airbnb =
+nycairbnb = 
   nyc_airbnb %>% 
-    mutate(rating = review_scores_location / 2) %>% 
-    select(neighbourhood_group, neighbourhood, rating, price, room_type, lat, long) %>% 
+    mutate(
+      rating = review_scores_location / 2) %>% 
+    select(neighbourhood_group, neighbourhood, rating, price, room_type, 
+           lat, long) %>% 
   filter(neighbourhood_group == "Manhattan",
          price %in% 100:500,
          room_type == "Entire home/apt") %>% 
@@ -34,10 +36,15 @@ Column {data-width=650}
 ### Scatterplot
 
 ```{r}
+renderLeaflet({
 nyc_airbnb %>% 
   mutate(
     text_label = str_c("Price: $", price, "\nRating: ", rating)) %>% 
-  plot_ly(x = ~lat, y = ~long, color = ~price, text = ~text_label, alpha = 0.5, type = "scatter", mode = "markers")
+  plot_ly(x = ~lat, y = ~long, color = ~price, text = ~text_label, alpha = 0.5, type = "scatter", mode = "markers") %>% 
+  leaflet() %>% 
+  addProviderTiles(providers$CartoDB.Positron) %>% 
+  addCircleMarkers(~lat, ~long, radius = .1)
+})
 ```
 
 Column {data-width=350}
