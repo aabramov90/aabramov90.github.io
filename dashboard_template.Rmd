@@ -2,7 +2,9 @@
 title: "Airbnb Data from 2017"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: columns
+    theme: journal
+    social: menu
+    orientation: rows
     vertical_layout: fill
     source: embed
 ---
@@ -12,6 +14,7 @@ library(flexdashboard)
 library(tidyverse)
 library(p8105.datasets)
 library(plotly)
+library(leaflet)
 
 data("nyc_airbnb")
 
