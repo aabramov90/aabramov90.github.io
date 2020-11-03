@@ -103,19 +103,13 @@ nyc_airbnb_2 =
   drop_na(rating) 
 ```
 
-Sample of 1000 Airbnbs
+Generate Leaflet map by Rating
 ```{r}
-nyc_airbnb_2 %>% 
-  sample_n(10) %>% 
-  ggplot(aes(x = lat, y = long, color = price)) + 
-  geom_point()
-```
+pal = colorNumeric("magma", nyc_airbnb_2 %>% pull(rating))
 
-Generate Leaflet map
-```{r}
 nyc_airbnb_2 %>% 
-leaflet() %>% 
-  addProviderTiles(providers$Stamen.Toner) %>% 
-  addMarkers(~lat, ~long)
+  leaflet() %>% 
+  addProviderTiles(providers$CartoDB.Positron) %>% 
+  addCircleMarkers(~lat, ~long, radius = 0.5, color = ~pal(rating))
 ```
 
