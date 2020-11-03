@@ -28,6 +28,14 @@ nyc_airbnb_1 =
          price %in% 100:500,
          room_type == "Entire home/apt") %>% 
   drop_na(rating)
+
+nyc_airbnb_2 =
+  nyc_airbnb %>% 
+    mutate(rating = review_scores_location / 2) %>% 
+    select(neighbourhood_group, neighbourhood, rating, price, room_type, lat, long) %>% 
+  filter(price %in% 100:500,
+         room_type == "Entire home/apt") %>% 
+  drop_na(rating) 
 ```
 
 Column {data-width=650}
@@ -62,5 +70,15 @@ nyc_airbnb_1 %>%
   mutate(
     neighbourhood = fct_reorder(neighbourhood, n)) %>% 
   plot_ly(x = ~neighbourhood, y = ~n, color = ~neighbourhood, type = "bar", colors = "viridis")
+```
+
+### Map with Ratings
+```{r}
+pal = colorNumeric("magma", nyc_airbnb_2 %>% pull(rating))
+
+nyc_airbnb_2 %>% 
+  leaflet() %>% 
+  addProviderTiles(providers$CartoDB.Positron) %>% 
+  addCircleMarkers(~lat, ~long, radius = 0.5, color = ~pal(rating))
 ```
 
