@@ -4,7 +4,6 @@ output:
   flexdashboard::flex_dashboard:
     theme: journal
     social: menu
-    orientation: rows
     source: embed
 ---
 
@@ -37,7 +36,7 @@ nyc_airbnb_2 =
   drop_na(rating) 
 ```
     
-Row {data-height=650}
+Column {data-height=600}
 -------------------------------------
 
 ### Map by Rating
@@ -51,7 +50,7 @@ nyc_airbnb_2 %>%
   addCircleMarkers(~lat, ~long, radius = 0.5, color = ~pal(rating), label = ~rating)
 ```
 
-Boxplots {.tabset .tabset-fade}
+Column {data-width=400}
 -------------------------------------
    
 ### Price of Airbnbs
@@ -62,7 +61,9 @@ nyc_airbnb_1 %>%
   plot_ly(y = ~price, x = ~neighbourhood, color = ~neighbourhood,
           type = "box", colors = "viridis")
 ```
-    
+
+Column {data-width=400}
+-------------------------------------
 ### Number of Airbnbs
 
 ```{r}
