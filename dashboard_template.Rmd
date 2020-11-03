@@ -1,5 +1,5 @@
 ---
-title: "Airbnb Data from 2017"
+title: "Airbnb in NYC Data from 2017"
 output: 
   flexdashboard::flex_dashboard:
     theme: journal
@@ -51,21 +51,19 @@ nyc_airbnb_2 %>%
   addCircleMarkers(~lat, ~long, radius = 0.5, color = ~pal(rating), label = ~rating)
 ```
 
-```
-
-Row {.tabset .tabset-fade}
+Boxplots {.tabset .tabset-fade}
 -------------------------------------
    
-### Price Boxplot
+### Price of Airbnbs
 
-```{r}
+```{r, warning=FALSE}
 nyc_airbnb_1 %>% 
   mutate(neighbourhood = fct_reorder(neighbourhood, price)) %>% 
   plot_ly(y = ~price, x = ~neighbourhood, color = ~neighbourhood,
           type = "box", colors = "viridis")
 ```
     
-### Count Boxplot
+### Number of Airbnbs
 
 ```{r}
 nyc_airbnb_1 %>% 
