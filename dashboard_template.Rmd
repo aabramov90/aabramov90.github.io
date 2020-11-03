@@ -18,7 +18,7 @@ library(leaflet)
 
 data("nyc_airbnb")
 
-nyc_airbnb = 
+nyc_airbnb_1 = 
   nyc_airbnb %>% 
     mutate(
       rating = review_scores_location / 2) %>% 
@@ -36,7 +36,7 @@ Column {data-width=650}
 ### Scatterplot
 
 ```{r}
-nyc_airbnb %>% 
+nyc_airbnb_1 %>% 
   mutate(
     text_label = str_c("Price: $", price, "\nRating: ", rating)) %>% 
   plot_ly(x = ~lat, y = ~long, color = ~price, text = ~text_label, alpha = 0.5, type = "scatter", mode = "markers") 
@@ -48,7 +48,7 @@ Column {data-width=350}
 ### Boxplot
 
 ```{r}
-nyc_airbnb %>% 
+nyc_airbnb_1 %>% 
   mutate(neighbourhood = fct_reorder(neighbourhood, price)) %>% 
   plot_ly(y = ~price, x = ~neighbourhood, color = ~neighbourhood,
           type = "box", colors = "viridis")
@@ -57,7 +57,7 @@ nyc_airbnb %>%
 ### Boxplot
 
 ```{r}
-nyc_airbnb %>% 
+nyc_airbnb_1 %>% 
   count(neighbourhood) %>% 
   mutate(
     neighbourhood = fct_reorder(neighbourhood, n)) %>% 

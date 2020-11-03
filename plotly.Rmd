@@ -116,6 +116,6 @@ Generate Leaflet map
 nyc_airbnb_2 %>% 
 leaflet() %>% 
   addProviderTiles(providers$Stamen.Toner) %>% 
-  addMarkers(~lat, ~long, popup = ~ rating)
+  addMarkers(~lat, ~long)
 ```
 
