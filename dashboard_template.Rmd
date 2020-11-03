@@ -32,14 +32,14 @@ nyc_airbnb_2 =
   nyc_airbnb %>% 
     mutate(rating = review_scores_location / 2) %>% 
     select(neighbourhood_group, neighbourhood, rating, price, room_type, lat, long) %>% 
-  filter(price %in% 100:500,
+  filter(price <500,
          room_type == "Entire home/apt") %>% 
   drop_na(rating) 
 ```
 
-Row {data-width=1000}
+Row {data-width=850}
 -----------------------------------------------------------------------
-### Map with Ratings
+### Map by Rating
 
 ```{r}
 pal = colorNumeric("magma", nyc_airbnb_2 %>% pull(rating))
@@ -47,10 +47,10 @@ pal = colorNumeric("magma", nyc_airbnb_2 %>% pull(rating))
 nyc_airbnb_2 %>% 
   leaflet() %>% 
   addProviderTiles(providers$CartoDB.Positron) %>% 
-  addCircleMarkers(~lat, ~long, radius = 0.5, color = ~pal(rating))
+  addCircleMarkers(~lat, ~long, radius = 0.5, color = ~pal(rating), label = ~rating)
 ```
 
-Row {data-width=1000}
+Row {data-width=850}
 -----------------------------------------------------------------------
 
 ### Price Scatterplot
