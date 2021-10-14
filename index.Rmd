@@ -16,4 +16,4 @@ output:
 
 # Local site
 
-[Airbnb Dashboard](dashboard_template.html)
+[Columbia](dashboard_template.html)
