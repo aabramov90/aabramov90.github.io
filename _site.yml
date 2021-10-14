@@ -1,20 +1,21 @@
-name: "Alexey's Website"
+name: "Alexey Abramov's Website"
 output_dir: "."
-theme: cosmo
+theme: spacelab
 navbar:
   title: "Home"
   right:
-    - text: "About"
+    - text: "About Me"
       href: about.html
-    - text: "Plotly"
+    - text: "Professional Profile"
       href: plotly.html
-    - text: "Dashboard"
+    - text: "Recreation and Travel"
       href: dashboard_template.html
-    - icon: fa-envelope fa-lg
+    - text: "Photos"
+      href: dashboard_template.html
+    - icon: fa-telegram fa-lg
       href: mailto:<aabramov90@gmail.com>
-    - icon: fa-github fa-lg
-      href: http://github.com/aabramov90/
 output:
   html_document:
-    theme: cosmo
+    theme:  spacelab
+    css: style.css
     code_folding: hide

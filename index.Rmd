@@ -1,19 +1,46 @@
 ---
-title: "Alexey's Website"
 output: 
   html_document:
     toc: true
     toc_float: true
+    includes:
+      in_header: hero-image.html
+editor_options: 
+  chunk_output_type: console
 ---
 
-# Links
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-* [Google] (https://www.google.com/)
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-# Local image
+</head>
 
-![](images/cover.jpg)
 
-# Local site
+<body>
 
-[Columbia](dashboard_template.html)
+
+\
+
+## <i class="fa fa-address-book-o"></i> About Me
+
+<center>
+
+![](images/IMG_0129.jpg){width=25%}
+
+</center>
+
+\
+
+\
+
+## <i class="fas fa-graduation-cap"></i> Professional
+
+\
+
+## <i class='fa fa-coffee'></i> Daydreaming
+
+\
+
+
+
