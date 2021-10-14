@@ -2,7 +2,6 @@
 title: "Airbnb in NYC Data from 2017"
 output: 
   flexdashboard::flex_dashboard:
-    theme: journal
     social: menu
     source: embed
 ---
