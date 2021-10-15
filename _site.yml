@@ -7,9 +7,9 @@ navbar:
     - text: "About Me"
       href: about.html
     - text: "Professional Profile"
-      href: plotly.html
+      href: professional.html
     - text: "Recreation and Travel"
-      href: dashboard_template.html
+      href: recreation.html
     - text: "Photos"
       href: dashboard_template.html
     - icon: fa-telegram fa-lg
