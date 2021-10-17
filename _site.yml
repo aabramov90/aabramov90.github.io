@@ -11,7 +11,7 @@ navbar:
     - text: "Recreation and Travel"
       href: recreation.html
     - text: "Photos"
-      href: dashboard_template.html
+      href: photos.html
     - icon: fa-telegram fa-lg
       href: mailto:<aabramov90@gmail.com>
 output:
