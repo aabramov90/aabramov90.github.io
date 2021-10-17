@@ -9,8 +9,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-
-
 <head>
   <meta charset="utf-8">
   <title>Lightbox Example</title>
@@ -19,11 +17,7 @@ editor_options:
 
 <body>
 
-<section>
-
-<h2>Bank of America Chicago Marathon 2021</h3>
-    
-<div>
+# Bank of America Chicago Marathon 2021
 
 <a href="images/marathon1.jpeg" data-lightbox="Marathon">Chicago Marathon Expo</a>
 
@@ -32,10 +26,6 @@ editor_options:
 <a href="images/marathon2.jpg" data-lightbox="Marathon">Post Finish - Medal</a>
 
 <a href="images/marathon4.jpg" data-lightbox="Marathon">Lurie Children's Hospital, Post-race Visit</a>
-
-</div>
-  </section>
-
 
 For more information, visit the  [Bank of America Chicago Marathon](https://www.chicagomarathon.com) official website 
 
